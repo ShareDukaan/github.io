@@ -1,84 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sharedukaan</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      margin: 0;
-      padding: 2rem;
-      background: #f9f9f9;
-      color: #333;
-    }
-    h1 {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    #searchInput {
-      display: block;
-      margin: 0 auto 2rem;
-      padding: 0.5rem;
-      width: 100%;
-      max-width: 400px;
-      font-size: 1rem;
-    }
-    .link-list {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      max-width: 500px;
-      margin: 0 auto;
-    }
-    .link {
-      background: white;
-      padding: 1rem;
-      border-radius: 6px;
-      text-align: center;
-      text-decoration: none;
-      color: #333;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-      transition: all 0.2s ease;
-    }
-    .link:hover {
-      background: #e6f7ff;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name's Links</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon"> <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="container">
+        <header class="profile-header">
+            <img src="images/profile.jpg" alt="Your Profile Picture" class="profile-pic">
+            <h1>Your Name or Brand</h1>
+            <p class="bio">Welcome to my digital hub! Find all my important links, projects, and social media in one place.</p>
+        </header>
 
-  <h1>Sharedukaan</h1>
-  <input type="text" id="searchInput" placeholder="Search links...">
+        <section class="links-grid">
+            <a href="https://yourwebsite.com" target="_blank" rel="noopener noreferrer" class="link-item">
+                <img src="images/website-thumb.jpg" alt="Website Thumbnail" class="link-thumbnail">
+                <span class="link-title">My Official Website</span>
+                <span class="link-description">Visit my main portfolio and blog.</span>
+            </a>
 
-  <div class="link-list" id="linkList">
-    <a href="#" class="link">Example Link 1</a>
-    <a href="#" class="link">Example Link 2</a>
-    <a href="#" class="link">Example Link 3</a>
-  </div>
+            <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" class="link-item">
+                <img src="images/github-thumb.jpg" alt="GitHub Thumbnail" class="link-thumbnail">
+                <span class="link-title">GitHub Profile</span>
+                <span class="link-description">Explore my open-source projects.</span>
+            </a>
 
-  <script>
-    const searchInput = document.getElementById('searchInput');
-    const links = document.querySelectorAll('.link');
+            <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" class="link-item">
+                <img src="images/linkedin-thumb.jpg" alt="LinkedIn Thumbnail" class="link-thumbnail">
+                <span class="link-title">LinkedIn Profile</span>
+                <span class="link-description">Connect with me professionally.</span>
+            </a>
 
-    searchInput.addEventListener('input', function () {
-      const term = this.value.toLowerCase();
-      links.forEach(link => {
-        link.style.display = link.textContent.toLowerCase().includes(term) ? 'block' : 'none';
-      });
-    });
-  </script>
+            <a href="https://youtube.com/yourchannel" target="_blank" rel="noopener noreferrer" class="link-item">
+                <img src="images/youtube-thumb.jpg" alt="YouTube Thumbnail" class="link-thumbnail">
+                <span class="link-title">My YouTube Channel</span>
+                <span class="link-description">Watch my latest videos and tutorials.</span>
+            </a>
 
-  <!-- Google Analytics (Add later) -->
-  <!-- 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXX');
-  </script>
-  -->
+            <a href="mailto:youremail@example.com" class="link-item">
+                <img src="images/email-thumb.jpg" alt="Email Thumbnail" class="link-thumbnail">
+                <span class="link-title">Send Me an Email</span>
+                <span class="link-description">Get in touch directly.</span>
+            </a>
 
+            <a href="https://example.com/project-x" target="_blank" rel="noopener noreferrer" class="link-item">
+                <img src="images/projectx-thumb.jpg" alt="Project X Thumbnail" class="link-thumbnail">
+                <span class="link-title">My Latest Project</span>
+                <span class="link-description">Check out what I'm currently building.</span>
+            </a>
+            
+            </section>
+
+        <footer class="social-links">
+            <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer">Twitter</a>
+            <a href="https://instagram.com/yourusername" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://facebook.com/yourusername" target="_blank" rel="noopener noreferrer">Facebook</a>
+            </footer>
+
+        <div class="footer-text">
+            <p>&copy; <span id="year"></span> Your Name. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        // Automatically update the year in the footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
